@@ -38,3 +38,4 @@ replay_pid*
 *.idea
 *.target
 *.html
+*.xml
