@@ -32,5 +32,37 @@ public class codingTest_2 {
         answer = max;
         return answer;
     }
+    
+        public int solution(int[] numsDivide, int[] numsDivided) { // 4번 문제
+        int answer = 0;
+        int a = numsDivided[0];
+        for(int i : numsDivided) {
+            a = gcd(a, i);
+        }
+        int min = Integer.MAX_VALUE;
+        for(int n : numsDivide) {
+            if(a % n == 0) {
+                min = Math.min(min, n);
+            }
+        }
+        for(int n : numsDivide) {
+            if(n < min) {
+                ++answer;
+            }
+        }
+        if(min == Integer.MAX_VALUE) {
+            answer = -1;
+        }
+        return answer;
+    }
+
+    public int gcd(int a, int b) {
+        while (b > 0) {
+            int temp = a;
+            a = b;
+            b = temp % b;
+        }
+        return a;
+    }
 
 }
